@@ -218,3 +218,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Dataset media (keep out of git)
+data/raw/
+*.mp4
+*.avi
+*.mov
+*.mkv
