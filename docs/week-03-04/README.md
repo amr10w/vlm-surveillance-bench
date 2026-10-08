@@ -22,6 +22,15 @@
     - Latency, VRAM, tokens/sec
     - Relative score = candidate's score ÷ reference's score, as a percentage.
     - **Human ceiling** for all of the above
+    - GPT as judge and the relative score
+        The scoring procedure, step by step:
+
+        1. Build triplets: (image, ground-truth textual description, question). The ground truth is the trusted human annotation: captions and boxes for COCO, or a detailed hand-written description for the wild images.
+        2. Candidate answer: LLaVA (or another model) sees the image and question and answers.
+        3. Reference answer: text-only GPT sees the ground-truth description (not the image) and the question and answers. Because it reads a perfect human description, the paper treats this as an “approximate theoretical upper bound”: roughly the best one could hope for.
+        4. Judging: text-only GPT receives the question, the description, and both answers. It rates each on helpfulness, relevance, accuracy and level of detail, giving a score from 1 to 10, plus a written explanation.
+        5. Relative score = candidate's score ÷ reference's score, as a percentage.
+
 - Step 4  choosing the models [ 1→4 small, 7→ 12 medium, api]
     
     
