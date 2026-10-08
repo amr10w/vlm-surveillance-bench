@@ -20,6 +20,7 @@
     - **LLM-judge:** correctness, completeness, **hallucination → An API model is the most reliable choice here**
     - Event F1, counting error, false-alarm rate
     - Latency, VRAM, tokens/sec
+    - Relative score = candidate's score ÷ reference's score, as a percentage.
     - **Human ceiling** for all of the above
 - Step 4  choosing the models [ 1→4 small, 7→ 12 medium, api]
     
